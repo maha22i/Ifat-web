@@ -1,0 +1,78 @@
+---
+import '@fontsource/space-grotesk';
+import '@fontsource/inter';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="IFAT - Connecter les vendeurs et fournisseurs à Djibouti" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-dark text-white">
+    <Navbar />
+    <slot />
+    <Footer />
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Fade in animations for sections
+      gsap.utils.toArray('.fade-in').forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%',
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --gradient: linear-gradient(90deg, #0066FF, #00D1FF, #0066FF);
+  }
+  
+  html {
+    background: #0A0A0A;
+  }
+
+  .gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 8s linear infinite;
+  }
+
+  .gradient-border {
+    background: var(--gradient);
+    background-size: 200% auto;
+    animation: gradient 8s linear infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>

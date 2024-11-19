@@ -1,0 +1,59 @@
+---
+const team = [
+  {
+    name: "Mohamed Chehem Mohamed",
+    role: "CEO & Co-fondateur",
+    image: "/images/FullSizeRender.jpg",
+    bio: "Développeur passionné et chef de projet engagé, spécialisé dans la conception et la gestion de solutions innovantes. Fort d'une expertise technique et d'une vision stratégique, je m'efforce de transformer des idées ambitieuses en projets concrets, en alliant collaboration, créativité et efficacité.",
+  },
+  {
+    name: "Mohamed Houmad Adan",
+    role: "CTO",
+    image: "/images/1.jpg",
+    bio: "Étudiant en master spécialisé en comptabilité et finance, passionné par l'optimisation des performances financières et la mise en place de solutions innovantes pour la gestion des ressources. Avec une vision axée sur l'efficacité et la précision, il aspire à transformer les défis financiers en opportunités stratégiques"
+  },
+  {
+    name: "Youssouf Abyazid",
+    role: "Developpeur web",
+    image: "/images/2.jpg",
+    bio: "Développeur talentueux avec une expertise solide en création d'applications innovantes et une aptitude à résoudre des défis techniques complexes. Passionné par le développement de solutions qui transforment les processus commerciaux, il joue un rôle clé dans la réalisation des projets ambitieux grâce à sa rigueur et sa créativité.",
+  },
+  {
+    name: "Aboubaker Sadik ",
+    role: "Community manager",
+    image: "/images/3.jpg",
+    bio: "Community manager dynamique, spécialisé dans la création de stratégies engageantes pour attirer et fidéliser les clients. Expert en étude de marché et en communication digitale, il excelle à connecter les projets innovants à leur public cible, tout en développant une présence forte et impactante sur les différentes plateformes.",
+  },
+];
+---
+
+<section id="team" class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 fade-in">
+        <span class="gradient-text">Notre</span> équipe
+      </h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">
+        Découvrez les personnes passionnées qui travaillent pour révolutionner le commerce à Djibouti.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {team.map((member) => (
+        <div class="group fade-in">
+          <div class="relative overflow-hidden rounded-2xl mb-4">
+            <div class="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <img 
+              src={member.image} 
+              alt={member.name}
+              class="w-full aspect-square object-cover"
+            />
+          </div>
+          <h3 class="text-xl font-semibold mb-1">{member.name}</h3>
+          <p class="text-primary mb-2">{member.role}</p>
+          <p class="text-gray-400 text-sm">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

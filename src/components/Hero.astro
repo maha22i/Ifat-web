@@ -1,0 +1,52 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-50"></div>
+  
+  <!-- Grid pattern -->
+  <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-8 fade-in">
+      <span class="gradient-text">Connectez</span> votre business<br/>avec<span class="gradient-text"> IFAT</span> 
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto fade-in">
+      IFAT révolutionne la connexion entre vendeurs et fournisseurs à Djibouti grâce à une solution innovante et intuitive.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+      <a href="#contact" class="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:opacity-90 transition-opacity">
+        Nous contacter
+      </a>
+      <a href="#features" class="inline-flex items-center px-8 py-3 rounded-full border-2 border-white/20 hover:border-white/40 transition-colors">
+        Découvrir les fonctionnalités
+      </a>
+    </div>
+  </div>
+
+  <!-- Animated shapes -->
+  <div class="absolute -bottom-32 left-1/2 transform -translate-x-1/2">
+    <div class="relative">
+      <div class="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div class="absolute top-0 -right-4 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+</style>
